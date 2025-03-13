@@ -1,0 +1,159 @@
+1.
+
+тестирование с файлом:
+$ echo -e "Hello, world!\nThis is a test file.\nAnother line." > sample.txt
+$ python3 simple_nl.py sample.txt
+1	Hello, world\!
+2	This is a test file.
+3	Another line.
+
+
+$ echo -e "Line 1\nLine 2\nLine 3" | python3 simple_nl.py
+1	Line 1
+2	Line 2
+3	Line 3
+
+
+
+пустой файл - ничего не выводит
+$ python3 simple_nl.py empty.txt
+
+
+ввод самостоятельнно:
+$ python3 simple_nl.py
+First line
+Second line
+Third line
+1	First line
+2	Second line
+3	Third line
+
+
+большое кол-во строк:
+$ seq 1000 > large.txt
+python3 simple_nl.py large.txt | head -10
+1	1
+2	2
+3	3
+4	4
+5	5
+6	6
+7	7
+8	8
+9	9
+10	10
+
+
+пустая строка:
+$ echo -n -e "\n" | python3 simple_nl.py
+1	
+
+
+-----------------------------------------------------------------------
+2. 
+
+создадим тестовые файлы:
+$ echo -e "a\nb\nc\nd\ne\nf\ng\nh\ni\nj\nk\nl\nm\nn\no" > test1.txt
+$ echo -e "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15" > test2.txt
+
+$ python3 simple_tail.py test1.txt
+==> test1.txt <==
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+
+
+из нескольких файлов:
+$ python3 simple_tail.py test1.txt test2.txt
+==> test1.txt <==
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+
+==> test2.txt <==
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+
+
+вывод из stdin:
+$ seq 30 | python3 simple_tail.py
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+
+-----------------------------------------------
+3.
+
+создаем файлы
+echo -e 'Hello, world!\nThis is a test file.\nAnother line.\n' > sample.txt
+echo -e 'Another test.\nMore text.' > sample2.txt
+
+файл:
+$ python3 simple_wc.py sample.txt
+  4  9 50 sample.txt
+
+
+stdin:
+$ echo -e 'Line 1\nLine 2 Line 3' | python3 simple_wc.py
+  2  6 21
+
+
+несколько файлов, total:
+$ python3 simple_wc.py sample.txt sample2.txt
+  4  9 50 sample.txt
+  2  4 25 sample2.txt
+  6 13 75 total
+
+
+запуск на несуществующем файле:
+$ python3 simple_wc.py missing.txt
+wc: missing.txt: No such file or directory
+
+пустой файл:
+
+$ python3 simple_wc.py empty.txt
+ 0 0 0 empty.txt
+
+
+пустой ввод:
+$ python3 simple_wc.py < /dev/null
+ 0 0 0
+
+
+
