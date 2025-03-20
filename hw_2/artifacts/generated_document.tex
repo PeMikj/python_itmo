@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{array}
+\begin{document}
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{FROM} & \textbf{TO} & \textbf{PRICE} \\ 
+        \hline
+        A & B & 17 \\ 
+        \hline
+        here & there & 19 \\ 
+        \hline
+        C & D & 22 \\ 
+        \hline
+    \end{tabular}
+    \caption{Example Table}
+    \label{tab:example}
+\end{table}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{example_image.jpg}
+    \caption{Example Image}
+    \label{fig:example}
+\end{figure}
+\end{document}
