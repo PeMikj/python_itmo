@@ -32,12 +32,11 @@ def benchmark():
     results = []
 
     for n_jobs in range(1, max_jobs + 1):
-        # Threading
+
         start = time.time()
         integrate(math.cos, 0, math.pi / 2, n_jobs=n_jobs, executor_type="thread")
         thread_time = time.time() - start
 
-        # Processing
         start = time.time()
         integrate(math.cos, 0, math.pi / 2, n_jobs=n_jobs, executor_type="process")
         process_time = time.time() - start

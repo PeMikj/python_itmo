@@ -44,7 +44,6 @@ if __name__ == "__main__":
     thread_time = run_threads()
     process_time = run_processes()
 
-    # Убедимся, что папка artifacts существует
     os.makedirs("artifacts", exist_ok=True)
 
     with open("artifacts/task_1.txt", "w") as f:
