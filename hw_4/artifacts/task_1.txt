@@ -1,0 +1,4 @@
+Fibonacci benchmark for N=30, repeats=10
+Synchronous:     1.37 seconds
+Threading:       1.39 seconds
+Multiprocessing: 0.39 seconds

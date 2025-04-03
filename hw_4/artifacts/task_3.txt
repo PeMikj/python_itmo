@@ -1,0 +1,7 @@
+[00:33:20] MAIN: You entered: hi
+[00:33:20] MAIN: Received from B: uv
+[00:33:24] MAIN: You entered: Hello
+[00:33:25] MAIN: Received from B: uryyb
+[00:33:41] MAIN: You entered: BBYYYE!
+[00:33:41] MAIN: Received from B: oolllr!
+[00:33:44] MAIN: You entered: exit
